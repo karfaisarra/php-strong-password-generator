@@ -25,6 +25,10 @@ include __DIR__ . '/functions.php'
             <div class="alert alert-success" role="alert">
                 <strong><?= password_generate($_GET['lunghezza']) ?></strong>
             </div>
+        <?php else : ?>
+            <div class="alert alert-success" role="alert">
+                <strong>Nessun parametro valido inserito</strong>
+            </div>
         <?php endif; ?>
         <div class="container bg-light p-5 rounded-3 mt-5">
             <form action="index.php" method="get">

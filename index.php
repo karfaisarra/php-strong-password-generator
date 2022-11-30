@@ -1,6 +1,7 @@
 <?php
-include __DIR__ . '/functions.php'
+include __DIR__ . '/functions.php';
 
+$risultato =  password_generate($_GET['lunghezza']);
 
 ?>
 
@@ -22,12 +23,8 @@ include __DIR__ . '/functions.php'
             <h2 class="text-white text-center">Genera una password sicura</h2>
         </div>
         <?php if (isset($_GET['lunghezza'])) : ?>
-            <div class="alert alert-success" role="alert">
-                <strong><?= password_generate($_GET['lunghezza']) ?></strong>
-            </div>
-        <?php else : ?>
-            <div class="alert alert-success" role="alert">
-                <strong>Nessun parametro valido inserito</strong>
+            <div class="alert alert-<?= $risultato['class']; ?>" role="alert">
+                <strong>Password: </strong><?= $risultato['message'] ?>
             </div>
         <?php endif; ?>
         <div class="container bg-light p-5 rounded-3 mt-5">
